@@ -2,15 +2,15 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const { MongoClient, InsertOneResult, ServerApiVersion } = require('mongodb');
 
-// Replace with your actual MongoDB connection URI
-const uri = "mongodb+srv://iampranavnalawade:QVWQCMoLQyBNZyQF@blooddonation.okjlos6.mongodb.net/?retryWrites=true&w=majority&appName=BloodDonation";
+
+const uri = "connection_stirng";
 
 const app = express();
 const port = process.env.PORT || 8888;
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
-// Improved error handling and feedback
+
 app.post('/donors', async (req, res) => {
   try {
     const client = await MongoClient.connect(uri, {
